@@ -10,7 +10,7 @@ import React, { Component } from 'react';
 import { Platform, StyleSheet, Text, View, TouchableOpacity } from 'react-native';
 import { changePlatform } from './actions';
 import { Provider } from 'react-redux';
-import AppExtends from './container/MainScreen';
+import MainScreen from './container/MainScreen';
 import configureStore from './store';
 
 const store = configureStore()
@@ -19,7 +19,7 @@ export default class App extends Component<Props> {
   render() {
     return (
       <Provider store={store}>
-        <AppExtends />
+        <MainScreen />
       </Provider>
     );
   }

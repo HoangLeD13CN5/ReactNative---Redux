@@ -4,7 +4,7 @@ import { changePlatform } from '../actions';
 import { Provider } from 'react-redux';
 import { connect } from 'react-redux';
 
-class AppExtends extends React.Component {
+class MainScreen extends React.Component {
     clickButton(text) {
         this.props.change(text);
     };
@@ -70,8 +70,9 @@ const styles = StyleSheet.create({
 });
 
 const mapStateToProps = state => {
+    console.log(state)
     return {
-        platform: state.platform
+        platform: state.platformReducer.platform
     }
 }
 
@@ -83,4 +84,4 @@ const mapDispatchToProps = dispatch => {
     }
 }
 
-export default connect(mapStateToProps,mapDispatchToProps)(AppExtends)
+export default connect(mapStateToProps,mapDispatchToProps)(MainScreen)
